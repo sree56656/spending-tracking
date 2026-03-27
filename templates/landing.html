@@ -23,7 +23,7 @@
         </p>
         <div class="hero-actions">
             <a href="{{ url_for('register') }}" class="btn-primary">Create free account</a>
-            <a href="#features" class="btn-primary">See how it works</a>
+            <a href="#" class="btn-primary" id="openVideoBtn">See how it works</a>
         </div>
     </div>
     <div class="hero-visual">
@@ -102,4 +102,64 @@
     </div>
 </section>
 
+<!-- Video Modal -->
+<div id="videoModal" class="modal">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+        <button class="modal-close" aria-label="Close modal">&times;</button>
+        <div class="video-container">
+            <iframe id="videoIframe"
+                    src=""
+                    title="How Spendly Works"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+(function() {
+    // Replace with your actual YouTube video ID later
+    const YOUTUBE_VIDEO_ID = 'dQw4w9WgXcQ';
+    const YOUTUBE_EMBED_URL = 'https://www.youtube.com/embed/' + YOUTUBE_VIDEO_ID;
+
+    const openBtn = document.getElementById('openVideoBtn');
+    const modal = document.getElementById('videoModal');
+    const modalOverlay = modal.querySelector('.modal-overlay');
+    const closeBtn = modal.querySelector('.modal-close');
+    const iframe = document.getElementById('videoIframe');
+
+    // Open modal
+    function openModal(e) {
+        e.preventDefault();
+        modal.classList.add('modal-open');
+        iframe.src = YOUTUBE_EMBED_URL;
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Close modal and stop video
+    function closeModal() {
+        modal.classList.remove('modal-open');
+        iframe.src = '';
+        document.body.style.overflow = '';
+    }
+
+    // Event listeners
+    openBtn.addEventListener('click', openModal);
+    closeBtn.addEventListener('click', closeModal);
+    modalOverlay.addEventListener('click', closeModal);
+
+    // Close on Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.classList.contains('modal-open')) {
+            closeModal();
+        }
+    });
+})();
+</script>
 {% endblock %}
