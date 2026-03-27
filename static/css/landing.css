@@ -1,0 +1,230 @@
+/* ------------------------------------------------------------------ */
+/* Hero Section - Landing Page                                         */
+/* ------------------------------------------------------------------ */
+
+.hero {
+    padding: 3rem 2rem 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 680px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hero-inner {
+    width: 100%;
+    margin-bottom: 3rem;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #d1f4e0;
+    color: #0f0f0f;
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    margin-bottom: 2rem;
+}
+
+.badge-dot {
+    width: 8px;
+    height: 8px;
+    background: #10b981;
+    border-radius: 50%;
+}
+
+.hero-title {
+    font-family: var(--font-body);
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 1.5rem;
+}
+
+.hero-title-accent {
+    color: #10b981;
+    font-weight: 700;
+}
+
+.hero-subtitle {
+    font-size: 1rem;
+    color: #6b6b6b;
+    line-height: 1.6;
+    max-width: 540px;
+    margin: 0 auto 2rem;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.hero-actions .btn-primary {
+    background: #0f0f0f;
+    color: #ffffff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+.hero-actions .btn-primary:hover {
+    background: #2d2d2d;
+}
+
+/* ------------------------------------------------------------------ */
+/* Dashboard Mock                                                      */
+/* ------------------------------------------------------------------ */
+
+.hero-visual {
+    width: 100%;
+    max-width: 580px;
+}
+
+.dashboard-mock {
+    background: #f5f5f5;
+    border-radius: 12px;
+    padding: 2rem 1.5rem 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.dashboard-dots {
+    display: flex;
+    gap: 0.4rem;
+    margin-bottom: 1.5rem;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.dot-red {
+    background: #ff5f56;
+}
+
+.dot-yellow {
+    background: #ffbd2e;
+}
+
+.dot-green {
+    background: #27c93f;
+}
+
+.dashboard-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background: #ffffff;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.stat-label {
+    font-size: 0.7rem;
+    color: #6b6b6b;
+    margin-bottom: 0.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.stat-value {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #0f0f0f;
+    margin-bottom: 0.3rem;
+}
+
+.stat-meta {
+    font-size: 0.7rem;
+    color: #6b6b6b;
+}
+
+.stat-negative {
+    color: #dc2626;
+}
+
+.stat-positive {
+    color: #10b981;
+}
+
+.dashboard-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.25rem;
+    background: #ffffff;
+    border-radius: 8px;
+}
+
+.bar-row {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    align-items: center;
+    gap: 1rem;
+}
+
+.bar-label {
+    font-size: 0.85rem;
+    color: #2d2d2d;
+    font-weight: 500;
+}
+
+.bar-track {
+    height: 8px;
+    background: #e5e5e5;
+    border-radius: 999px;
+    overflow: hidden;
+    position: relative;
+}
+
+.bar {
+    height: 100%;
+    border-radius: 999px;
+    transition: width 0.6s ease;
+}
+
+.bar-orange {
+    background: #fb923c;
+}
+
+.bar-blue {
+    background: #3b82f6;
+}
+
+.bar-purple {
+    background: #a855f7;
+}
+
+/* ------------------------------------------------------------------ */
+/* Responsive                                                          */
+/* ------------------------------------------------------------------ */
+
+@media (max-width: 600px) {
+    .hero {
+        padding: 2rem 1rem 3rem;
+    }
+
+    .dashboard-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-value {
+        font-size: 1.2rem;
+    }
+}
